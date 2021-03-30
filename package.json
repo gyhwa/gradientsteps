@@ -1,0 +1,19 @@
+{
+  "name": "gradientsteps",
+  "version": "1.0.0",
+  "description": "Steps for gradient creation.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "color": "^3.1.3",
+    "color-convert": "^2.0.1",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "tinygradient": "^1.1.4"
+  }
+}

@@ -1,0 +1,91 @@
+/* Other colors 4ECDC4 FF6B6B FFE66D*/
+
+html {
+  background-color: #eeeeee;
+  color: #222831
+}
+
+h3 {
+  padding-bottom: 10px;
+  color: #3f72af;
+}
+
+a {
+  color: #222831
+}
+
+a:hover{
+  color: #3f72af;
+  text-decoration: none;
+}
+/* Sections */
+.hero {
+  background-color: #222831;
+  color: #eeeeee;
+  padding: 100px 50px 25px 150px;
+}
+
+a.hero-link {
+  color: #eeeeee
+}
+a.hero-link:hover {
+  color: #3f72af;
+  text-decoration: none;
+}
+.section-secondary {
+  padding-top: 75px;
+  padding-bottom: 50px;
+}
+
+.hint {
+  font-size: 0.75em;
+  color: #3f72af;
+}
+
+.color-text {
+   font-weight: bold;
+}
+
+/* Empty Block */
+.block-color {
+  height: 100px;
+  width: 100%
+
+}
+
+/* Buttons */
+.btn-color {
+  background-color: #222831;
+  color: #eeeeee;
+  border: none;
+}
+
+.btn-color:hover {
+  background-color: #393e46;
+  color: #eeeeee;
+}
+
+.btn-up {
+  position: fixed;
+  height: 25px;
+  width: 25px;
+  bottom: 25px;
+  right: 25px;
+  text-align: center;
+}
+
+.btn-up:hover {
+  text-decoration: none;
+}
+
+.footer {
+  background-color: #eeeeee;
+  vertical-align: baseline;
+  color: #393e46;
+  padding: 20px 20px 20px 20px;
+
+}
+
+.footer-date {
+  font-size: 0.75em;
+}

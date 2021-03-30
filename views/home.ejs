@@ -1,0 +1,120 @@
+<%- include('partials/header') %>
+
+<!-- add a hero section HERE -->
+<div class="container-fluid hero" id="hero">
+  <div class="row">
+    <div class="col">
+      <h1>GRADIENT STEPS</h1>
+      <p>
+        Get the HEX, RGB, CMYK, and HSV of a gradient.
+        Steps:
+        </p>
+        <ol>
+          <li>Select at least two colors by clicking the checkmark. </li>
+          <li>Change the colors if you want. </li>
+          <li>Select how many steps (2-64) go in between each color. </li>
+        </ol>
+      </div>
+  </div>
+</div>
+
+<div class="container section-secondary" id="color-selection">
+      <form action="/" method="POST">
+        <div class="row">
+            <div class="col-12 col-sm-6">
+              <div class="form-group">
+                <%if (checkmarks[0]) {%>
+                  <input class="form-check-input" type="checkbox" name="colorCheck1" checked>
+                <%} else {%>
+                  <input class="form-check-input" type="checkbox" name="colorCheck1">
+                <%}%>
+                <label class="color-text" for="colorCheck1">Color 1</label>
+                <input type="color" class="form-control form-control-color" value=<%= originalgradients[0]%> aria-describedby="color1" name="color1" required>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <div class="form-group">
+                <%if (checkmarks[1]) {%>
+                  <input class="form-check-input" type="checkbox" name="colorCheck2" checked>
+                <%} else {%>
+                  <input class="form-check-input" type="checkbox" name="colorCheck2">
+                <%}%>
+                <label class="color-text" for="colorCheck2">Color 2</label>
+                <input type="color" class="form-control form-control-color" value=<%= originalgradients[1]%> aria-describedby="color2" name="color2" required>
+              </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-sm-6">
+              <div class="form-group">
+                <%if (checkmarks[2]) {%>
+                  <input class="form-check-input" type="checkbox" name="colorCheck3" checked>
+                <%} else {%>
+                  <input class="form-check-input" type="checkbox" name="colorCheck3">
+                <%}%>
+                <label class="color-text" for="colorCheck1">Color 3</label>
+                <input type="color" class="form-control form-control-color" value=<%= originalgradients[2]%> aria-describedby="color3" name="color3" required>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <div class="form-group">
+                <%if (checkmarks[3]) {%>
+                  <input class="form-check-input" type="checkbox" name="colorCheck4" checked>
+                <%} else {%>
+                  <input class="form-check-input" type="checkbox" name="colorCheck4">
+                <%}%>
+                <label class="color-text" for="colorCheck2">Color 4</label>
+                <input type="color" class="form-control form-control-color" value=<%= originalgradients[3]%> aria-describedby="color4" name="color4" required>
+              </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-sm-6">
+              <div class="form-group">
+                <label class="color-text" for="steps">Steps:</label>
+                <div class="hint">
+                  <p>
+                    2-64 steps
+                    </p>
+                  </div>
+                <input class="form-control" type="number" name="steps" value=<%=steps%> placeholder="0" min="2" max="64">
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 align-self-end d-flex justify-content-center">
+              <div class="form-group">
+                <button type="submit" class="btn btn-lg btn-primary btn-color"> Get Gradient</button>
+              </div>
+            </div>
+        </div>
+        </form>
+        <%= alert%>
+</div>
+<hr>
+<div class="container section-secondary" id="color-gradients">
+  <div class="row">
+    <div class="col">
+      <h3>GRADIENT COLORS</h3>
+      </div>
+  </div>
+  <div class="row">
+  <% gradients.forEach(gradient => {%>
+    <div class="col-12 col-lg-3 col-sm-12 col-md-4">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <div class="block-color" style="background-color:<%= gradient.hex %>"></div>
+          <h5 class="card-title" style="color:<%= gradient.hex %>"><%= gradient.hex %></h5>
+          <p class="card-text">RGB: <%= gradient.rgb[0] %> <%= gradient.rgb[1] %> <%= gradient.rgb[2] %></p>
+          <p class="card-text">CMYK: <%= gradient.cmyk[0] %> <%= gradient.cmyk[1] %> <%= gradient.cmyk[2] %>  <%= gradient.cmyk[3] %></p>
+          <p class="card-text">HSV: <%= gradient.hsv[0] %> <%= gradient.hsv[1] %> <%= gradient.hsv[2] %></p>
+        </div>
+      </div>
+    </div>
+  <%}) %>
+  </div>
+</div>
+<div>
+  <a href="/" class="btn-color btn-up rounded-circle"> ↑ </a>
+</div>
+<%- include('partials/footer') %>
